@@ -30,9 +30,14 @@ Plugin 'VundleVim/Vundle.vim'
 " put used plugins in here:
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " stuff for vim-airline
 let g:airline_powerline_fonts = 1
+
+" stuff for ctrlp plugin
+let g:ctrlp_map = '<c-p>'
+let g:cltrp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -61,4 +66,7 @@ set tabstop=4
 set number
 set relativenumber
 
+"ignore files in the build folder
+set wildignore+=*\\build\\*,*\\bin\\*,*\\build_win_clang\\* " for windows
+set wildignore+=*/build/*,*/bin/*,*/build_win_clang/* " for linux
 
