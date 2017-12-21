@@ -29,7 +29,10 @@ Plugin 'VundleVim/Vundle.vim'
 
 " put used plugins in here:
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
+" stuff for vim-airline
+let g:airline_powerline_fonts = 1
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,4 +57,8 @@ endif
 
 set shiftwidth=4
 set tabstop=4
+
+set number
+set relativenumber
+
 
