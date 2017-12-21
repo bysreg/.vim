@@ -31,6 +31,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ericcurtin/CurtineIncSw.vim'
 
 " stuff for vim-airline
 let g:airline_powerline_fonts = 1
@@ -38,6 +39,9 @@ let g:airline_powerline_fonts = 1
 " stuff for ctrlp plugin
 let g:ctrlp_map = '<c-p>'
 let g:cltrp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" stuff for CurtineIncSw
+map <F5> :call CurtineIncSw()<CR>
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -65,6 +69,8 @@ set tabstop=4
 
 set number
 set relativenumber
+
+set incsearch " enable incremental search
 
 "ignore files in the build folder
 set wildignore+=*\\build\\*,*\\bin\\*,*\\build_win_clang\\* " for windows
