@@ -70,7 +70,10 @@ set tabstop=4
 set number
 set relativenumber
 
+" for searching
 set incsearch " enable incremental search
+set ic " defaults to ignore case
+nnoremap <esc> :noh<return><esc> " clear highlight on pressing esc
 
 "ignore files in the build folder
 set wildignore+=*\\build\\*,*\\bin\\*,*\\build_win_clang\\* " for windows
