@@ -32,6 +32,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ericcurtin/CurtineIncSw.vim'
+Plugin 'tikhomirov/vim-glsl'
 
 " stuff for vim-airline
 let g:airline_powerline_fonts = 1
@@ -42,6 +43,9 @@ let g:cltrp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 " stuff for CurtineIncSw
 map <F5> :call CurtineIncSw()<CR>
+
+" stuff for vim-gls
+autocmd! BufNewFile,BufRead *.vs,*.fs,*.gs set ft=glsl
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -78,4 +82,13 @@ nnoremap <esc> :noh<return><esc> " clear highlight on pressing esc
 "ignore files in the build folder
 set wildignore+=*\\build\\*,*\\bin\\*,*\\build_win_clang\\* " for windows
 set wildignore+=*/build/*,*/bin/*,*/build_win_clang/* " for linux
+
+" line warp options
+set breakindent " wrapped line appears in with the same indent
+set breakindentopt=shift:4
+
+vsplit " make vertical split as default. should be the last one in the file as some set will only be applied to one of the view instead
+
+
+
 
