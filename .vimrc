@@ -33,6 +33,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ericcurtin/CurtineIncSw.vim'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'sickill/vim-monokai'
 
 " stuff for vim-airline
 let g:airline_powerline_fonts = 1
@@ -63,9 +64,8 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " This is for syntax highlighting
-if &t_Co > 2 || has("gui_running")
-	syntax on
-	set hlsearch
+if !exists("g:syntax_on")
+	syntax enable " https://stackoverflow.com/questions/33380451/is-there-a-difference-between-syntax-on-and-syntax-enable-in-vimscript
 endif
 
 set shiftwidth=4
@@ -75,8 +75,10 @@ set number
 set relativenumber
 
 " for searching
+set hlsearch
 set incsearch " enable incremental search
 set ic " defaults to ignore case
+set smartcase " search will be case sensitive if search pattern contains upper case character
 nnoremap <esc> :noh<return><esc> " clear highlight on pressing esc
 
 "ignore files in the build folder
@@ -86,6 +88,11 @@ set wildignore+=*/build/*,*/bin/*,*/build_win_clang/* " for linux
 " line warp options
 set breakindent " wrapped line appears in with the same indent
 set breakindentopt=shift:4
+
+set cursorline " highlight cursor's current line
+set noswapfile
+set noerrorbells
+set pastetoggle=<F3>
 
 vsplit " make vertical split as default. should be the last one in the file as some set will only be applied to one of the view instead
 
