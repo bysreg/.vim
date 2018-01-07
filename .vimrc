@@ -150,6 +150,9 @@ nnoremap <leader><Space> :call ToggleComment()<cr>
 vnoremap <leader><Space> :call ToggleComment()<cr>
 """"" end of toggling comment stuff
 
+" use system's clipboard all the time
+set clipboard=unnamed
+
 " vsplit " make vertical split as default. should be the last one in the file as some set will only be applied to one of the view instead
 
 
