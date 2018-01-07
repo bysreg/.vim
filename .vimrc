@@ -155,6 +155,9 @@ vnoremap <leader><Space> :call ToggleComment()<cr>
 " use system's clipboard all the time
 set clipboard=unnamed
 
+:nnoremap J :bprevious<CR> "this replaces join. see :help J
+:nnoremap K :bnext<CR> " this replaces keywordprg. see :help K
+
 " vsplit " make vertical split as default. should be the last one in the file as some set will only be applied to one of the view instead
 
 
