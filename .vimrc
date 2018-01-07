@@ -94,6 +94,7 @@ set breakindentopt=shift:4
 set cursorline " highlight cursor's current line
 set noswapfile
 set noerrorbells
+set belloff=all
 set pastetoggle=<F3>
 
 """"" for toggling comment
