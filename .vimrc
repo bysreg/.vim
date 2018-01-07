@@ -37,6 +37,7 @@ Plugin 'sickill/vim-monokai'
 
 " stuff for vim-airline
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1 "to show all buffers when there's only one tab open
 
 " stuff for ctrlp plugin
 let g:ctrlp_map = '<c-p>'
